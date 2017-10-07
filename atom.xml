@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-06T04:39:42.003Z</updated>
+  <updated>2017-10-07T04:26:52.772Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编写高质量的HTML</title>
+    <link href="http://yoursite.com/2017/10/07/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8F%E7%9A%84html/"/>
+    <id>http://yoursite.com/2017/10/07/编写高质量的html/</id>
+    <published>2017-10-07T03:20:44.292Z</published>
+    <updated>2017-10-07T04:26:52.772Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<p>本来知识想写一边关于html标签语义化的，但是发现&lt;编写高质量代码 -Web前端开发修炼之道&gt;里面的知识点更系统，再补上html5的就更全面了</p>
+<h2 id="html的语义化"><a href="#html的语义化" class="headerlink" title="html的语义化"></a>html的语义化</h2><ul>
+<li>根据内容的结构化，选择适合的标签编写对开发者和浏览器友好的代码</li>
+<li>html的作用是提供上下文结构和含义</li>
+</ul>
+<h2 id="语义化的目的"><a href="#语义化的目的" class="headerlink" title="语义化的目的"></a>语义化的目的</h2><p>  1 没有样式依然呈现清晰的结构<br>  2 方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备），提高网页的可访问性<br>  3 有利用SEO<br>  4 便于团队开发和维护</p>
+<h2 id="标签语义化的检测"><a href="#标签语义化的检测" class="headerlink" title="标签语义化的检测"></a>标签语义化的检测</h2><p>  去掉样式，浏览器会根据标签的语义给定一个默认样式，看网页是否组织良好，是否有很好的可读性</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>  1 经可能少的使用无语义的标签div和span<br>  2 不要使用纯样式标签，用css代替<br>  3 需要强调的内容放在标签strong或者em<br>  3 每个input标签对应的说明文本都需要使用label标签</p>
+<h2 id="常见的语义化标签"><a href="#常见的语义化标签" class="headerlink" title="常见的语义化标签"></a>常见的语义化标签</h2><h3 id="html5结构语义化标签"><a href="#html5结构语义化标签" class="headerlink" title="html5结构语义化标签"></a>html5结构语义化标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span><span class="tag">&lt;<span class="name">aside</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://www.html5jscss.com/html5-semantics-section.html" target="_blank" rel="external">参考</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;本来知识想写一边关于html标签语义化的，但是发现&amp;lt;编写高质量代码 -Web前端开发修炼之道&amp;gt;里面的知识点更系统，再补上html5的就更全面了&lt;/p&gt;
+&lt;h2 id=&quot;html的语义化&quot;&gt;&lt;a href=&quot;#html的语义化&quot; clas
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/10/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E4%BF%A1%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://yoursite.com/2017/10/06/前端通信实践/</id>
+    <published>2017-10-06T05:10:56.230Z</published>
+    <updated>2017-10-06T05:10:56.247Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>heroku 配合 mLab部署node应用</title>
