@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-07T04:26:52.772Z</updated>
+  <updated>2017-10-14T10:29:49.601Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,68 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/10/14/node%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81web%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://yoursite.com/2017/10/14/node实现一个静态web服务器/</id>
+    <published>2017-10-14T09:59:22.966Z</published>
+    <updated>2017-10-14T10:29:49.601Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">title: node实现静态web服务器实践</div></pre></td></tr></table></figure>
+<p>其实一开始我只是想通过node来实现获取前端发送的表单数据，一方面熟悉node基础，另一方面是是熟悉HTTP头部字段，后来慢慢发现这是静态web服务器所做的事情，而我一直使用的anywhere也是做类似的事情(精简版)，很实用。</p>
+<h2 id="node技术点"><a href="#node技术点" class="headerlink" title="node技术点"></a>node技术点</h2><p>1 http模块<br>2 fs path url模块<br>3 connenct中间件模块<br>4 http缓存机制原理</p>
+<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><p>1 熟练使用node常用模块<br>2 做一个类似anywhere但功能更丰富的web服务器并学习用npm发布<br>3 在熟悉node基础之上做一个express版本的<br>4 学习使用命令行工具curl模拟发送请求(类似工具httpie)</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://www.toolmao.com/nodejs-static-server" target="_blank" rel="external">用NodeJS来实现静态文件服务器</a></li>
+<li><a href="http://www.cnblogs.com/chenqf/p/6386163.html" target="_blank" rel="external">彻底弄懂HTTP缓存机制及原理</a></li>
+<li><a href="http://www.cnblogs.com/zamhown/p/6429163.html" target="_blank" rel="external">使用Node.js快速搭建简单的静态文件服务器</a></li>
+<li><a href="http://web.jobbole.com/91084/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">浏览器缓存机制剖析</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/10/13/js%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97%E4%B9%8BBOM/"/>
+    <id>http://yoursite.com/2017/10/13/js基础系列之BOM/</id>
+    <published>2017-10-13T00:13:11.822Z</published>
+    <updated>2017-10-14T02:04:52.529Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">title: js基础系列之BOM</div></pre></td></tr></table></figure>
+<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><h3 id="窗口位置"><a href="#窗口位置" class="headerlink" title="窗口位置"></a>窗口位置</h3><p>  screenLeft<br>  screenTop<br>  注意兼容性</p>
+<h3 id="窗口大小"><a href="#窗口大小" class="headerlink" title="窗口大小"></a>窗口大小</h3><p> innerWidth<br> innerHeight<br> outerWidth<br> outerHeight<br> 注意兼容性<br> resizeTo()<br> resizeBy()<br> 调整窗口大小、</p>
+<h2 id="导航和打开窗口"><a href="#导航和打开窗口" class="headerlink" title="导航和打开窗口"></a>导航和打开窗口</h2><p>open()<br>close()</p>
+<h2 id="系统对话框"><a href="#系统对话框" class="headerlink" title="系统对话框"></a>系统对话框</h2><p>alert()<br>confirm()<br>prompt()</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>location对象既是window对象的属性，也是document的属性，不仅保存当前文档信息，还将URL解析为独立的片段</p>
+<p>###属性<br>search(最常用)<br>hash<br>host<br>hostname<br>port<br>href<br>protocol<br>pathname</p>
+<h3 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h3><p>location.assign(URL)<br>location.href(URL)<br>window.location(URL)<br>location.replace(URL)  不会生成历史记录<br>location.reload()       有可能从缓存中加载<br>location.reload(true)  从服务器重新加载</p>
+<h2 id="navigator"><a href="#navigator" class="headerlink" title="navigator"></a>navigator</h2><p>  识别客户端浏览器的标准</p>
+<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>  保存用户上网的历史记录<br> go() 参数可以是数值也可以是字符串<br> back()<br> forward()<br> length()</p>
+<h2 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h2><p> 包含显示器信息，实用少</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>编写高质量的HTML</title>
     <link href="http://yoursite.com/2017/10/07/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8F%E7%9A%84html/"/>
     <id>http://yoursite.com/2017/10/07/编写高质量的html/</id>
     <published>2017-10-07T03:20:44.292Z</published>
-    <updated>2017-10-07T04:26:52.772Z</updated>
+    <updated>2017-10-14T02:05:06.540Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]</p>
 <p>本来知识想写一边关于html标签语义化的，但是发现&lt;编写高质量代码 -Web前端开发修炼之道&gt;里面的知识点更系统，再补上html5的就更全面了</p>
@@ -32,6 +89,11 @@
 <h2 id="标签语义化的检测"><a href="#标签语义化的检测" class="headerlink" title="标签语义化的检测"></a>标签语义化的检测</h2><p>  去掉样式，浏览器会根据标签的语义给定一个默认样式，看网页是否组织良好，是否有很好的可读性</p>
 <h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>  1 经可能少的使用无语义的标签div和span<br>  2 不要使用纯样式标签，用css代替<br>  3 需要强调的内容放在标签strong或者em<br>  3 每个input标签对应的说明文本都需要使用label标签</p>
 <h2 id="常见的语义化标签"><a href="#常见的语义化标签" class="headerlink" title="常见的语义化标签"></a>常见的语义化标签</h2><h3 id="html5结构语义化标签"><a href="#html5结构语义化标签" class="headerlink" title="html5结构语义化标签"></a>html5结构语义化标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span><span class="tag">&lt;<span class="name">aside</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>很明显，可以参考各种框架的写法 下面是两个HTML框架</p>
+<ul>
+<li><a href="http://amazeui.org/" target="_blank" rel="external">Amaze UI</a></li>
+<li><a href="http://zui.sexy/#/" target="_blank" rel="external">ZUI</a></li>
+</ul>
 <p><a href="http://www.html5jscss.com/html5-semantics-section.html" target="_blank" rel="external">参考</a></p>
 ]]></content>
     
@@ -47,13 +109,19 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>前端通信实践</title>
     <link href="http://yoursite.com/2017/10/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E4%BF%A1%E5%AE%9E%E8%B7%B5/"/>
     <id>http://yoursite.com/2017/10/06/前端通信实践/</id>
     <published>2017-10-06T05:10:56.230Z</published>
-    <updated>2017-10-06T05:10:56.247Z</updated>
+    <updated>2017-10-14T02:05:09.983Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>##</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h2 id=&quot;Ajax&quot;&gt;&lt;a href=&quot;#Ajax&quot; class=&quot;headerlink&quot; title=&quot;Ajax&quot;&gt;&lt;/a&gt;Ajax&lt;/h2&gt;&lt;p&gt;##&lt;/p&gt;
+
     
     </summary>
     
@@ -87,7 +155,7 @@
     <link href="http://yoursite.com/2017/09/11/freeCodeCamp/"/>
     <id>http://yoursite.com/2017/09/11/freeCodeCamp/</id>
     <published>2017-09-11T03:35:49.171Z</published>
-    <updated>2017-09-14T08:23:27.430Z</updated>
+    <updated>2017-10-14T02:05:13.288Z</updated>
     
     <content type="html"><![CDATA[<h2 id="阿拉伯数字转化为罗马数字-转化细节"><a href="#阿拉伯数字转化为罗马数字-转化细节" class="headerlink" title="阿拉伯数字转化为罗马数字,转化细节"></a>阿拉伯数字转化为罗马数字,<a href="http://www.shuxuele.com/roman-numerals.html" target="_blank" rel="external">转化细节</a></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertToRoman</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> arr = <span class="built_in">String</span>(num).split(<span class="string">''</span>);</div><div class="line">  <span class="keyword">var</span> formatNum = [</div><div class="line">  [<span class="string">'I'</span>,<span class="string">'II'</span>,<span class="string">'III'</span>,<span class="string">'IV'</span>,<span class="string">'V'</span>,<span class="string">'VI'</span>,<span class="string">'VII'</span>,<span class="string">'VIII'</span>,<span class="string">'IX'</span>],</div><div class="line">  [<span class="string">'X'</span>,<span class="string">'XX'</span>,<span class="string">'XXX'</span>,<span class="string">'XL'</span>,<span class="string">'L'</span>,<span class="string">'LX'</span>,<span class="string">'LXX'</span>,<span class="string">'LXXX'</span>,<span class="string">'XC'</span>],</div><div class="line">  [<span class="string">'C'</span>,<span class="string">'CC'</span>,<span class="string">'CCC'</span>,<span class="string">'CD'</span>,<span class="string">'D'</span>,<span class="string">'DC'</span>,<span class="string">'DCC'</span>,<span class="string">'DCCC'</span>,<span class="string">'CM'</span>],</div><div class="line">  [<span class="string">'M'</span>,<span class="string">'MM'</span>,<span class="string">'MMM'</span>]</div><div class="line">];</div><div class="line"></div><div class="line"><span class="keyword">var</span> res = arr.reverse().map(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> formatNum[index][item<span class="number">-1</span>];</div><div class="line">&#125;);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> res.reverse().join(<span class="string">''</span>);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  一个重要的点是构造了一个二维数组来利用map函数</p>
