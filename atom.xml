@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-16T11:33:12.034Z</updated>
+  <updated>2017-10-16T11:37:46.848Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,27 @@
   
   <entry>
     <title></title>
+    <link href="http://yoursite.com/2017/10/16/%E5%93%8D%E5%BA%94%E5%BC%8FWeb%E8%AE%BE%E8%AE%A1%E6%80%BB%E8%AE%A1/"/>
+    <id>http://yoursite.com/2017/10/16/响应式Web设计总计/</id>
+    <published>2017-10-16T11:37:46.848Z</published>
+    <updated>2017-10-16T11:37:46.848Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
     <link href="http://yoursite.com/2017/10/16/%E8%B7%A8%E5%9F%9F%E4%B9%8BCORS%E5%AE%9E%E8%B7%B5/"/>
     <id>http://yoursite.com/2017/10/16/跨域之CORS实践/</id>
     <published>2017-10-16T10:30:31.161Z</published>
-    <updated>2017-10-16T11:33:12.034Z</updated>
+    <updated>2017-10-16T11:43:59.822Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<h2 id="跨域之CORS实践"><a href="#跨域之CORS实践" class="headerlink" title="跨域之CORS实践"></a>跨域之CORS实践</h2><h2 id="什么是跨域资源共享"><a href="#什么是跨域资源共享" class="headerlink" title="什么是跨域资源共享"></a>什么是跨域资源共享</h2><p>是一种使用自定义的HTTP头部让浏览器与服务器进行沟通的解决方案，在发送请求时，会附加一个Origin头部，服务器根据这个头部来响应</p>
+<h2 id="title-跨域之CORS实践"><a href="#title-跨域之CORS实践" class="headerlink" title="title: 跨域之CORS实践"></a>title: 跨域之CORS实践</h2><h2 id="什么是跨域资源共享"><a href="#什么是跨域资源共享" class="headerlink" title="什么是跨域资源共享"></a>什么是跨域资源共享</h2><p>是一种使用自定义的HTTP头部让浏览器与服务器进行沟通的解决方案，在发送请求时，会附加一个Origin头部，服务器根据这个头部来响应</p>
 <h2 id="基本的实现方式（简单请求）"><a href="#基本的实现方式（简单请求）" class="headerlink" title="基本的实现方式（简单请求）"></a>基本的实现方式（简单请求）</h2><p>在服务器端设置 Access-Control-Allow-Origin 为 * 或者请求地址<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'http://192.168.199.130:8000'</span></div></pre></td></tr></table></figure></p>
 <h2 id="Preflighted-Requests"><a href="#Preflighted-Requests" class="headerlink" title="Preflighted Requests"></a>Preflighted Requests</h2><p>使用自定义HTTP头部，或者使用GET或POST之外的请求，就会向服务器发送一个Preflight请求，这种请求使用OPTIONS方法，发送一下头部</p>
 <ul>
@@ -55,7 +69,7 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h2 id=&quot;跨域之CORS实践&quot;&gt;&lt;a href=&quot;#跨域之CORS实践&quot; class=&quot;headerlink&quot; title=&quot;跨域之CORS实践&quot;&gt;&lt;/a&gt;跨域之CORS实践&lt;/h2&gt;&lt;h2 id=&quot;什么是跨域资源共享&quot;&gt;&lt;a href=&quot;#什么是跨域资源共享&quot; 
+&lt;h2 id=&quot;title-跨域之CORS实践&quot;&gt;&lt;a href=&quot;#title-跨域之CORS实践&quot; class=&quot;headerlink&quot; title=&quot;title: 跨域之CORS实践&quot;&gt;&lt;/a&gt;title: 跨域之CORS实践&lt;/h2&gt;&lt;h2 id=&quot;什么是跨域资
     
     </summary>
     
