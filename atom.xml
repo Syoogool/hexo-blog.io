@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-14T10:40:09.504Z</updated>
+  <updated>2017-10-16T11:33:12.034Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/10/16/%E8%B7%A8%E5%9F%9F%E4%B9%8BCORS%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://yoursite.com/2017/10/16/跨域之CORS实践/</id>
+    <published>2017-10-16T10:30:31.161Z</published>
+    <updated>2017-10-16T11:33:12.034Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="跨域之CORS实践"><a href="#跨域之CORS实践" class="headerlink" title="跨域之CORS实践"></a>跨域之CORS实践</h2><h2 id="什么是跨域资源共享"><a href="#什么是跨域资源共享" class="headerlink" title="什么是跨域资源共享"></a>什么是跨域资源共享</h2><p>是一种使用自定义的HTTP头部让浏览器与服务器进行沟通的解决方案，在发送请求时，会附加一个Origin头部，服务器根据这个头部来响应</p>
+<h2 id="基本的实现方式（简单请求）"><a href="#基本的实现方式（简单请求）" class="headerlink" title="基本的实现方式（简单请求）"></a>基本的实现方式（简单请求）</h2><p>在服务器端设置 Access-Control-Allow-Origin 为 * 或者请求地址<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'http://192.168.199.130:8000'</span></div></pre></td></tr></table></figure></p>
+<h2 id="Preflighted-Requests"><a href="#Preflighted-Requests" class="headerlink" title="Preflighted Requests"></a>Preflighted Requests</h2><p>使用自定义HTTP头部，或者使用GET或POST之外的请求，就会向服务器发送一个Preflight请求，这种请求使用OPTIONS方法，发送一下头部</p>
+<ul>
+<li>Origin：与简单请求一样</li>
+<li>Access-Control-Request-Method: 请求自身使用的方法(OPTIONS)</li>
+<li>Access-Control-Request-Headers: 自定义的头部信息(可选)</li>
+</ul>
+<p>客户端示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">'POST'</span>, url, <span class="literal">true</span>)</div><div class="line">xhr.setRequestHeader(<span class="string">'X-PINGOTHER'</span>, <span class="string">'pingpong'</span>)</div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure></p>
+<p>通过一个带有自定义的HTTP头部的的POST请求来触发发送Preflight请求</p>
+<p>服务器端通过发送如下HTTP头部告诉客户端是否允许这种类型的请求</p>
+<ul>
+<li>Access-Control-Allow-Origin: 与简单请求一样</li>
+<li>Access-Control-Allow-Methods: 允许的方法</li>
+<li>Access-Control-Allow-Headers: 允许客户端自定义的头部</li>
+<li>Access-Control-Max-Age: 缓存这个Preflight请求的时间（秒为单位，可选）</li>
+</ul>
+<p>服务器端示例（node服务器）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (req.method === <span class="string">'OPTIONS'</span>) &#123;</div><div class="line">  res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">    <span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'http://192.168.199.130:8000'</span>,</div><div class="line">    <span class="string">'Access-Control-Allow-Methods'</span>: <span class="string">'GET, POST, OPTIONS'</span>,</div><div class="line">    <span class="string">'Access-Control-Allow-Headers'</span>: <span class="string">'X-PINGOTHER'</span>,</div><div class="line">    <span class="string">'Access-Control-Max-Age'</span>: <span class="number">1000</span></div><div class="line">  &#125;)</div><div class="line">  res.end()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Preflight请求付出的代价就是在第一次请求时会多一次HTTP请求（在缓存时间内）<br>IE10及更早版本不支持</p>
+<h2 id="带凭据的请求"><a href="#带凭据的请求" class="headerlink" title="带凭据的请求"></a>带凭据的请求</h2><p>默认情况下，跨域请求不提供凭据（cookie、HTTP认证及SSH证明等），客户端通过将withCredentials属性设置为true，可以指定某个请求发送凭据  如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = createXHR()</div><div class="line">xhr.withCredentials = <span class="literal">true</span>;</div></pre></td></tr></table></figure></p>
+<p>如果服务器接收带凭据的请求，会用如下HTTP头部响应<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'Access-Control-Allow-Credentials'</span>: <span class="string">'true'</span>,</div></pre></td></tr></table></figure></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>CORS的兼容性需要考虑，兼容IE10+，IE中有XDR能实现类似的跨域通信，后面单独介绍<br>同时遇到一个问题是带凭据请求中的cookie不能读取</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解 -阮一峰</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">CORS -MDN</a></li>
+<li>JavaScript高级程序编程</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;跨域之CORS实践&quot;&gt;&lt;a href=&quot;#跨域之CORS实践&quot; class=&quot;headerlink&quot; title=&quot;跨域之CORS实践&quot;&gt;&lt;/a&gt;跨域之CORS实践&lt;/h2&gt;&lt;h2 id=&quot;什么是跨域资源共享&quot;&gt;&lt;a href=&quot;#什么是跨域资源共享&quot; 
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>node实现静态web服务器实践</title>
@@ -48,7 +95,7 @@
     <link href="http://yoursite.com/2017/10/13/js%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97%E4%B9%8BBOM/"/>
     <id>http://yoursite.com/2017/10/13/js基础系列之BOM/</id>
     <published>2017-10-13T00:13:11.822Z</published>
-    <updated>2017-10-14T10:40:39.632Z</updated>
+    <updated>2017-10-14T11:32:20.283Z</updated>
     
     <content type="html"><![CDATA[<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><h3 id="窗口位置"><a href="#窗口位置" class="headerlink" title="窗口位置"></a>窗口位置</h3><p>  screenLeft<br>  screenTop<br>  注意兼容性</p>
 <h3 id="窗口大小"><a href="#窗口大小" class="headerlink" title="窗口大小"></a>窗口大小</h3><p> innerWidth<br> innerHeight<br> outerWidth<br> outerHeight<br> 注意兼容性<br> resizeTo()<br> resizeBy()<br> 调整窗口大小、</p>
