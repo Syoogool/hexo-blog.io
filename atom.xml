@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-16T11:48:07.626Z</updated>
+  <updated>2017-10-16T11:52:04.793Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,23 @@
     <link href="http://yoursite.com/2017/10/16/%E5%93%8D%E5%BA%94%E5%BC%8FWeb%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/10/16/响应式Web设计总结/</id>
     <published>2017-10-16T11:37:46.848Z</published>
-    <updated>2017-10-16T11:48:07.626Z</updated>
+    <updated>2017-10-16T11:52:04.793Z</updated>
+    
+    <content type="html"><![CDATA[<p>先挖坑</p>
+<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><ul>
+<li><a href="https://book.douban.com/subject/20390374/" target="_blank" rel="external">响应式Web设计</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://beforweb.com/node/6/page/0/3" target="_blank" rel="external">什么是响应式Web设计？怎样进行？</a>\</li>
+<li><a href="http://www.uisdc.com/9-responsive-web-design-principle#" target="_blank" rel="external">响应式Web设计的9项基本原则</a></li>
+</ul>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;先挖坑&lt;/p&gt;
+&lt;h2 id=&quot;todo&quot;&gt;&lt;a href=&quot;#todo&quot; class=&quot;headerlink&quot; title=&quot;todo&quot;&gt;&lt;/a&gt;todo&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/2039
     
     </summary>
     
