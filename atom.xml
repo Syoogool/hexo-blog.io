@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-16T11:52:04.793Z</updated>
+  <updated>2017-10-23T03:59:16.236Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML标签总结</title>
+    <link href="http://yoursite.com/2017/10/23/HTML%E6%A0%87%E7%AD%BE%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/10/23/HTML标签总结/</id>
+    <published>2017-10-23T03:41:43.608Z</published>
+    <updated>2017-10-23T03:59:16.236Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常见块级元素"><a href="#常见块级元素" class="headerlink" title="常见块级元素"></a>常见块级元素</h2><p>body div p h1 h2 … h6 form ul ol li</p>
+<h2 id="常见的内联元素"><a href="#常见的内联元素" class="headerlink" title="常见的内联元素"></a>常见的内联元素</h2><p>a abbr span img input label select button i em strong b sub sup</p>
+<h2 id="需要区分细节的标签"><a href="#需要区分细节的标签" class="headerlink" title="需要区分细节的标签"></a>需要区分细节的标签</h2><p>b vs em<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>纯表现为字体加粗的标签<span class="tag">&lt;/<span class="name">b</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>加强文本语气的标签<span class="tag">&lt;/<span class="name">em</span>&gt;</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;常见块级元素&quot;&gt;&lt;a href=&quot;#常见块级元素&quot; class=&quot;headerlink&quot; title=&quot;常见块级元素&quot;&gt;&lt;/a&gt;常见块级元素&lt;/h2&gt;&lt;p&gt;body div p h1 h2 … h6 form ul ol li&lt;/p&gt;
+&lt;h2 id=&quot;常见的内联元
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>响应式Web设计总结</title>
