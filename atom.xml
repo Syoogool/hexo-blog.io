@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-23T04:27:06.221Z</updated>
+  <updated>2017-10-28T09:59:49.390Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,16 +16,150 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML5新特性总结</title>
+    <link href="http://yoursite.com/2017/10/26/HTMNL5%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/10/26/HTMNL5新特性总结/</id>
+    <published>2017-10-26T02:37:15.128Z</published>
+    <updated>2017-10-28T09:59:49.390Z</updated>
+    
+    <content type="html"><![CDATA[<p>这次总结知识罗列出知识点和基本的api,</p>
+<h1 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h1><h2 id="新元素"><a href="#新元素" class="headerlink" title="新元素"></a>新元素</h2><pre><code>1 结构新元素
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">artile</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span></div></pre></td></tr></table></figure>
+
+2 文本新元素
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">datalist</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">time</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">progress</span>&gt;</span></div></pre></td></tr></table></figure>
+</code></pre><h1 id="设备访问"><a href="#设备访问" class="headerlink" title="设备访问"></a>设备访问</h1><h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><pre><code>1 提供定位地点的信息（精读，纬度，海拔）
+2 navigator.geolocation.getCurrentPosition(callback)
+3 api
+ - coords.longitude
+ - coords.lanitude
+</code></pre><p>  -<a href="http://www.csdn.net/article/2013-06-03/2815511-HTML5-API" target="_blank" rel="external">其他一些设备访问</a></p>
+<h1 id="离线-本地存储"><a href="#离线-本地存储" class="headerlink" title="离线/本地存储"></a>离线/本地存储</h1><h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><pre><code>1 提供一个比cookie更大的本地存储（5M），而且不上传服务器
+2 分为localStorage和sessionStorage，区别是前者不主动删除便永久存在，后者关闭浏览器便会自动清除数据
+3 api
+  - getItem()
+  - setitem()
+  - removeItem()
+  - length()
+  - clear()
+</code></pre><h2 id="web-SQL"><a href="#web-SQL" class="headerlink" title="web SQL"></a>web SQL</h2><h2 id="应用程序缓存"><a href="#应用程序缓存" class="headerlink" title="应用程序缓存"></a>应用程序缓存</h2><pre><code>1 缓存本地资源
+2 启动应用程序缓存需要在html 标签添加属性 manifest=&apos;filename.appcache&apos;
+3 缓存文件分为三部分
+  - 要缓存的资源（CACHE-MANiFEST)
+  - 不要缓存的资源（NETWORK)
+  - 找不到页面重定向页面（FALLBACK)
+4 缓存更新
+  - 触动缓存更新方式：清除本地缓存，更新缓存文件
+  - 一般更新缓存是要更新缓存文件 并且更新注释里的缓存日期和版本号
+</code></pre><h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h2 id="Web-Workers"><a href="#Web-Workers" class="headerlink" title="Web Workers"></a>Web Workers</h2><pre><code>1 开启新的进程在后台执行脚本
+2 使用 var w = new Works(&apos;filename.js&apos;)
+3 使用常见，高密集吃内存，cpu的运算
+</code></pre><h1 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h1><h2 id="SSE"><a href="#SSE" class="headerlink" title="SSE"></a>SSE</h2><pre><code>1 server-send-event(服务器推送事件)
+2 客户端 var sse= new event-source()
+3 服务器端需要设置一个首部为 Content-type: text/event-stream
+</code></pre><h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><h1 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h1><h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><pre><code>- 适合游戏开发
+</code></pre><h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><pre><code>- 矢量伸缩图，不依赖像素
+
+#### 资源
+- [在线贝塞尔工具](http://cubic-bezier.com/)
+- [Snap.svg](http://snapsvg.io)
+- [bonsai](http://bonsaijs.org/)
+#### 参考
+- [SVG -MDN](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial)
+- [SVG标签 -W3Cplus](http://www.w3cplus.com/blog/tags/411.html)
+</code></pre><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="拖放"><a href="#拖放" class="headerlink" title="拖放"></a>拖放</h2><pre><code>1 设置要拖放的元素  dragable=true
+2 要拖放的数据(ondragstart事件)
+3 设置放拖放元素的元素(ondragover  ondrop)
+</code></pre><h2 id="桌面通知（Nodifacation"><a href="#桌面通知（Nodifacation" class="headerlink" title="桌面通知（Nodifacation)"></a>桌面通知（Nodifacation)</h2><ul>
+<li><p><a href="https://segmentfault.com/a/1190000011670082" target="_blank" rel="external">参考</a></p>
+<h2 id="一些特性"><a href="#一些特性" class="headerlink" title="一些特性"></a>一些特性</h2></li>
+<li><a href="http://www.csdn.net/article/2013-05-27/2815444-5-html5-features-you-must-know" target="_blank" rel="external">来源</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这次总结知识罗列出知识点和基本的api,&lt;/p&gt;
+&lt;h1 id=&quot;语义化&quot;&gt;&lt;a href=&quot;#语义化&quot; class=&quot;headerlink&quot; title=&quot;语义化&quot;&gt;&lt;/a&gt;语义化&lt;/h1&gt;&lt;h2 id=&quot;新元素&quot;&gt;&lt;a href=&quot;#新元素&quot; class=&quot;header
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3新特性总结</title>
+    <link href="http://yoursite.com/2017/10/26/css3%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/10/26/css3新特性总结/</id>
+    <published>2017-10-26T02:02:27.952Z</published>
+    <updated>2017-10-28T09:59:51.558Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="动画相关"><a href="#动画相关" class="headerlink" title="动画相关"></a>动画相关</h2><p>1 过渡（transition）<br>2 转换2D/3D（transform）<br>3 动画（animation）</p>
+<h2 id="图片相关"><a href="#图片相关" class="headerlink" title="图片相关"></a>图片相关</h2><h2 id="背景和渐变"><a href="#背景和渐变" class="headerlink" title="背景和渐变"></a>背景和渐变</h2><ul>
+<li>background-image</li>
+<li>background-size</li>
+<li>background-origin</li>
+<li><p>background-clip</p>
+</li>
+<li><p>线性渐变(linear-gredient)</p>
+</li>
+<li>径向渐变()</li>
+</ul>
+<h2 id="文本和字体-多列"><a href="#文本和字体-多列" class="headerlink" title="文本和字体,多列"></a>文本和字体,多列</h2><ul>
+<li>text-shadow</li>
+<li>text-overflow</li>
+<li>word-wrap</li>
+<li>word-break</li>
+<li><p>box-shadow</p>
+</li>
+<li><p>columns</p>
+</li>
+<li><p>@font</p>
+</li>
+<li><p>媒体查询</p>
+</li>
+<li>圆角<br>-</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;动画相关&quot;&gt;&lt;a href=&quot;#动画相关&quot; class=&quot;headerlink&quot; title=&quot;动画相关&quot;&gt;&lt;/a&gt;动画相关&lt;/h2&gt;&lt;p&gt;1 过渡（transition）&lt;br&gt;2 转换2D/3D（transform）&lt;br&gt;3 动画（animation）&lt;/p
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/10/25/js%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/"/>
+    <id>http://yoursite.com/2017/10/25/js基础系列之对象继承/</id>
+    <published>2017-10-25T04:34:39.494Z</published>
+    <updated>2017-10-25T04:34:39.509Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>HTML标签总结</title>
     <link href="http://yoursite.com/2017/10/23/HTML%E6%A0%87%E7%AD%BE%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/10/23/HTML标签总结/</id>
     <published>2017-10-23T03:41:43.608Z</published>
-    <updated>2017-10-23T04:27:06.221Z</updated>
+    <updated>2017-10-23T04:39:31.892Z</updated>
     
     <content type="html"><![CDATA[<h2 id="常见块级元素"><a href="#常见块级元素" class="headerlink" title="常见块级元素"></a>常见块级元素</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> <span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">p</span>&gt;</span> <span class="tag">&lt;<span class="name">h1</span>&gt;</span> <span class="tag">&lt;<span class="name">h2</span>&gt;</span> ... <span class="tag">&lt;<span class="name">h6</span>&gt;</span> <span class="tag">&lt;<span class="name">form</span>&gt;</span> <span class="tag">&lt;<span class="name">ul</span>&gt;</span> <span class="tag">&lt;<span class="name">ol</span>&gt;</span> <span class="tag">&lt;<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="常见的内联元素"><a href="#常见的内联元素" class="headerlink" title="常见的内联元素"></a>常见的内联元素</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">abbr</span>&gt;</span> <span class="tag">&lt;<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">img</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span>&gt;</span> <span class="tag">&lt;<span class="name">label</span>&gt;</span> <span class="tag">&lt;<span class="name">select</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">i</span>&gt;</span> <span class="tag">&lt;<span class="name">em</span>&gt;</span> <span class="tag">&lt;<span class="name">strong</span>&gt;</span> <span class="tag">&lt;<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="需要区分细节的标签"><a href="#需要区分细节的标签" class="headerlink" title="需要区分细节的标签"></a>需要区分细节的标签</h2><p>1 表现型标签 可以用css代替<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span> 表现为粗体文本效果</div><div class="line"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 表现为斜体文本效果</div><div class="line"><span class="tag">&lt;<span class="name">big</span>&gt;</span> 表现为大号字体效果</div><div class="line"><span class="tag">&lt;<span class="name">small</span>&gt;</span> 表现为小号字体效果</div></pre></td></tr></table></figure></p>
 <p>2 拥有确切的语义的标签<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span> 文本定义为强调的内容</div><div class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span> 文本定义为语气更强的强调内容</div><div class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span> 定义计算机代码文本</div><div class="line"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span> 定义键盘文本</div><div class="line"><span class="tag">&lt;<span class="name">cite</span>&gt;</span> 定义引用</div><div class="line"><span class="tag">&lt;<span class="name">var</span>&gt;</span> 定义变量</div></pre></td></tr></table></figure></p>
+<h2 id="html5常用语义标签"><a href="#html5常用语义标签" class="headerlink" title="html5常用语义标签"></a>html5常用语义标签</h2><p>```html</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://caibaojian.com/html5/" target="_blank" rel="external">HTML5手册</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">

@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> HTML5新特性总结 · apollo</title><meta name="description" content="HTML5新特性总结 - Syoogool"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/hexo-blog.io/favicon.png"><link rel="stylesheet" href="/hexo-blog.io/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="apollo"></head><body><div class="wrap"><header><a href="/hexo-blog.io/" class="logo-link"><img src="/hexo-blog.io/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/hexo-blog.io/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/hexo-blog.io/archives" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/Syoogool" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/hexo-blog.io/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">HTML5新特性总结</h1><div class="post-info">Oct 26, 2017</div><div class="post-content"><p>这次总结知识罗列出知识点和基本的api,</p>
+<h1 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h1><h2 id="新元素"><a href="#新元素" class="headerlink" title="新元素"></a>新元素</h2><pre><code>1 结构新元素
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">artile</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span></div></pre></td></tr></table></figure>
+
+2 文本新元素
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">datalist</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">time</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">progress</span>&gt;</span></div></pre></td></tr></table></figure>
+</code></pre><h1 id="设备访问"><a href="#设备访问" class="headerlink" title="设备访问"></a>设备访问</h1><h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><pre><code>1 提供定位地点的信息（精读，纬度，海拔）
+2 navigator.geolocation.getCurrentPosition(callback)
+3 api
+ - coords.longitude
+ - coords.lanitude
+</code></pre><p>  -<a href="http://www.csdn.net/article/2013-06-03/2815511-HTML5-API" target="_blank" rel="external">其他一些设备访问</a></p>
+<h1 id="离线-本地存储"><a href="#离线-本地存储" class="headerlink" title="离线/本地存储"></a>离线/本地存储</h1><h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><pre><code>1 提供一个比cookie更大的本地存储（5M），而且不上传服务器
+2 分为localStorage和sessionStorage，区别是前者不主动删除便永久存在，后者关闭浏览器便会自动清除数据
+3 api
+  - getItem()
+  - setitem()
+  - removeItem()
+  - length()
+  - clear()
+</code></pre><h2 id="web-SQL"><a href="#web-SQL" class="headerlink" title="web SQL"></a>web SQL</h2><h2 id="应用程序缓存"><a href="#应用程序缓存" class="headerlink" title="应用程序缓存"></a>应用程序缓存</h2><pre><code>1 缓存本地资源
+2 启动应用程序缓存需要在html 标签添加属性 manifest=&apos;filename.appcache&apos;
+3 缓存文件分为三部分
+  - 要缓存的资源（CACHE-MANiFEST)
+  - 不要缓存的资源（NETWORK)
+  - 找不到页面重定向页面（FALLBACK)
+4 缓存更新
+  - 触动缓存更新方式：清除本地缓存，更新缓存文件
+  - 一般更新缓存是要更新缓存文件 并且更新注释里的缓存日期和版本号
+</code></pre><h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h2 id="Web-Workers"><a href="#Web-Workers" class="headerlink" title="Web Workers"></a>Web Workers</h2><pre><code>1 开启新的进程在后台执行脚本
+2 使用 var w = new Works(&apos;filename.js&apos;)
+3 使用常见，高密集吃内存，cpu的运算
+</code></pre><h1 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h1><h2 id="SSE"><a href="#SSE" class="headerlink" title="SSE"></a>SSE</h2><pre><code>1 server-send-event(服务器推送事件)
+2 客户端 var sse= new event-source()
+3 服务器端需要设置一个首部为 Content-type: text/event-stream
+</code></pre><h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><h1 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h1><h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><pre><code>- 适合游戏开发
+</code></pre><h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><pre><code>- 矢量伸缩图，不依赖像素
+
+#### 资源
+- [在线贝塞尔工具](http://cubic-bezier.com/)
+- [Snap.svg](http://snapsvg.io)
+- [bonsai](http://bonsaijs.org/)
+#### 参考
+- [SVG -MDN](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial)
+- [SVG标签 -W3Cplus](http://www.w3cplus.com/blog/tags/411.html)
+</code></pre><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="拖放"><a href="#拖放" class="headerlink" title="拖放"></a>拖放</h2><pre><code>1 设置要拖放的元素  dragable=true
+2 要拖放的数据(ondragstart事件)
+3 设置放拖放元素的元素(ondragover  ondrop)
+</code></pre><h2 id="桌面通知（Nodifacation"><a href="#桌面通知（Nodifacation" class="headerlink" title="桌面通知（Nodifacation)"></a>桌面通知（Nodifacation)</h2><ul>
+<li><p><a href="https://segmentfault.com/a/1190000011670082" target="_blank" rel="external">参考</a></p>
+<h2 id="一些特性"><a href="#一些特性" class="headerlink" title="一些特性"></a>一些特性</h2></li>
+<li><a href="http://www.csdn.net/article/2013-05-27/2815444-5-html5-features-you-must-know" target="_blank" rel="external">来源</a></li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/hexo-blog.io/2017/10/26/css3新特性总结/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2017 <a href="http://yoursite.com">Syoogool</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
