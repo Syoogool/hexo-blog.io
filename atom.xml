@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-28T10:11:34.807Z</updated>
+  <updated>2017-10-28T10:15:29.477Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/10/26/HTMNL5%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/10/26/HTMNL5新特性总结/</id>
     <published>2017-10-26T02:37:15.128Z</published>
-    <updated>2017-10-28T10:11:34.807Z</updated>
+    <updated>2017-10-28T10:15:29.477Z</updated>
     
     <content type="html"><![CDATA[<p>这次总结知识罗列出知识点和基本的api,</p>
 <h1 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h1><h2 id="新元素"><a href="#新元素" class="headerlink" title="新元素"></a>新元素</h2><p>  1 结构新元素<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">artile</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -46,9 +46,10 @@
 </code></pre><h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h2 id="Web-Workers"><a href="#Web-Workers" class="headerlink" title="Web Workers"></a>Web Workers</h2><p>  1 开启新的进程在后台执行脚本<br>  2 使用 var w = new Works(‘filename.js’)<br>  3 使用常见，高密集吃内存，cpu的运算</p>
 <h1 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h1><h2 id="SSE"><a href="#SSE" class="headerlink" title="SSE"></a>SSE</h2><p>  1 server-send-event(服务器推送事件)<br>  2 客户端 var sse= new event-source()<br>  3 服务器端需要设置一个首部为 Content-type: text/event-stream</p>
 <h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><h1 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h1><h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><ul>
-<li>适合游戏开发<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2></li>
-<li><p>矢量伸缩图，不依赖像素</p>
-<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4></li>
+<li>适合游戏开发</li>
+</ul>
+<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><ul>
+<li>矢量伸缩图，不依赖像素<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4></li>
 <li><a href="http://cubic-bezier.com/" target="_blank" rel="external">在线贝塞尔工具</a></li>
 <li><a href="http://snapsvg.io" target="_blank" rel="external">Snap.svg</a></li>
 <li><a href="http://bonsaijs.org/" target="_blank" rel="external">bonsai</a><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4></li>
