@@ -5,7 +5,7 @@
   <link href="/hexo-blog.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-19T09:52:19.722Z</updated>
+  <updated>2017-11-21T08:42:40.210Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/11/20/js%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2017/11/20/js常用代码记录/</id>
+    <published>2017-11-20T05:34:06.955Z</published>
+    <updated>2017-11-21T08:42:40.210Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="title-js常用代码记录"><a href="#title-js常用代码记录" class="headerlink" title="title: js常用代码记录"></a>title: js常用代码记录</h2><h2 id="通用的事件监听器"><a href="#通用的事件监听器" class="headerlink" title="通用的事件监听器"></a>通用的事件监听器</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line">  addHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (element.addEventListener) &#123;</div><div class="line">      element.addEventListener(type, handler, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</div><div class="line">      element.attachEvent(<span class="string">'on'</span> + type, handler);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">      element[<span class="string">'on'</span> + type] = handler;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  removeHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (element.removeEventListener) &#123;</div><div class="line">      element.removeEventListener(type, handler, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (element.datachEvent) &#123;</div><div class="line">      element.datachEvent(<span class="string">'on'</span> + type, handler);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">      element[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  getTarget: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> event.target || event.srcElement;</div><div class="line">  &#125;,</div><div class="line">  preventDefault: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (event.preventDefault) &#123;</div><div class="line">      event.preventDefault();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      event.returnValue = <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  stopPropagation: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (event.stopPropagation) &#123;</div><div class="line">      event.stopPropagation();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      event.cancelBubble = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  getEvent: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> event ? event : <span class="built_in">window</span>.event;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="原生Ajax"><a href="#原生Ajax" class="headerlink" title="原生Ajax"></a>原生Ajax</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXHR</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> xmlhttp;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</div><div class="line">  &#123;</div><div class="line">      <span class="comment">//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码</span></div><div class="line">      xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">      <span class="comment">// IE6, IE5 浏览器执行代码</span></div><div class="line">      xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> xmlhttp;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> xmlhttp = createXHR();</div><div class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">    <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"/try/ajax/ajax_info.txt"</span>,<span class="literal">true</span>);</div><div class="line">  xmlhttp.send();</div></pre></td></tr></table></figure>
+<h2 id="模拟事件-鼠标事件"><a href="#模拟事件-鼠标事件" class="headerlink" title="模拟事件(鼠标事件)"></a>模拟事件(鼠标事件)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ele = ducument.getElementById(<span class="string">'myId'</span>);</div><div class="line"><span class="comment">//创建事件对象</span></div><div class="line"><span class="keyword">var</span> event = <span class="built_in">document</span>.createEvent(<span class="string">'MouseEvents'</span>);</div><div class="line"><span class="comment">// 初始化事件对象</span></div><div class="line">event.initMouseEvent(<span class="string">'click'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="built_in">document</span>.defaultView, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="number">0</span>, <span class="literal">null</span>);</div><div class="line"><span class="comment">// 触发事件</span></div><div class="line">event.dispatchEvent(event);</div></pre></td></tr></table></figure>
+<h2 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ele = ducument.getElementById(<span class="string">'myId'</span>);</div><div class="line"><span class="keyword">var</span> event = <span class="built_in">document</span>.createEvent(<span class="string">'CustomEvent'</span>);</div><div class="line">event.initCustomEvent(<span class="string">'myevent'</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="string">'Hello world'</span>);</div><div class="line">ele.dispatchEvent(event);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;title-js常用代码记录&quot;&gt;&lt;a href=&quot;#title-js常用代码记录&quot; class=&quot;headerlink&quot; title=&quot;title: js常用代码记录&quot;&gt;&lt;/a&gt;title: js常用代码记录&lt;/h2&gt;&lt;h2 id=&quot;通用的事件监听器&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>css常见问题解决方案记录</title>
+    <link href="http://yoursite.com/2017/11/19/css%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2017/11/19/css常见问题解决方案记录/</id>
+    <published>2017-11-19T10:08:09.095Z</published>
+    <updated>2017-11-21T09:05:36.205Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="inline-block-间隙"><a href="#inline-block-间隙" class="headerlink" title="inline-block 间隙"></a>inline-block 间隙</h2><h2 id="最小字体"><a href="#最小字体" class="headerlink" title="最小字体"></a>最小字体</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform-origin</span>: 0 50%;</div><div class="line">transform: scale(10/12);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;inline-block-间隙&quot;&gt;&lt;a href=&quot;#inline-block-间隙&quot; class=&quot;headerlink&quot; title=&quot;inline-block 间隙&quot;&gt;&lt;/a&gt;inline-block 间隙&lt;/h2&gt;&lt;h2 id=&quot;最小字体&quot;&gt;&lt;a href
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>css常用代码收集</title>
@@ -199,13 +242,18 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>js基础系列之继承</title>
     <link href="http://yoursite.com/2017/10/25/js%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/"/>
     <id>http://yoursite.com/2017/10/25/js基础系列之对象继承/</id>
     <published>2017-10-25T04:34:39.494Z</published>
-    <updated>2017-10-25T04:34:39.509Z</updated>
+    <updated>2017-11-27T14:47:50.284Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1 原型链继承"></a>1 原型链继承</h2><p>基本思想是通过原型让一个引用类型原型对象继承<br>另一个引用类型的示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.property = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.property;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.subProperty = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 继承SuperType</span></div><div class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h2 id=&quot;1-原型链继承&quot;&gt;&lt;a href=&quot;#1-原型链继承&quot; class=&quot;headerlink&quot; title=&quot;1 原型链继承&quot;&gt;&lt;/a&gt;1 原型链继承&lt;/h2&gt;&lt;p&gt;基本思想是通过原型让一个引用类型原型对象继承&lt;br&gt;另一个引用类型的示例&lt;br&gt;&lt;figure cl
     
     </summary>
     
